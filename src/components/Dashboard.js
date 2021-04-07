@@ -3,9 +3,11 @@ import React, { useState } from 'react'
 import { Button, Card, Alert } from 'react-bootstrap'
 import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
+import Image from 'react-bootstrap/Image'
 
 const Dashboard = () => {
     const [error, setError] = useState('');
+    const [profilePic, setProfilePic] = useState("https://thumbs.dreamstime.com/b/faceless-businessman-avatar-man-suit-blue-tie-human-profile-userpic-face-features-web-picture-gentlemen-85824471.jpg")
     const { currentUser,logout} = useAuth();
     const history = useHistory();
 
@@ -20,13 +22,18 @@ const Dashboard = () => {
          }
         
     }
+    function updateProfilePic() {
+        alert('Clicked on Profile Photo');
+        
+    }
     return (
         <>
             <Card>
                 <Card.Body>
                     <h2 className='text-center mb-4'>Profile</h2>
+                    <Image onClick={updateProfilePic} className="d-block mx-auto img-fluid w-50" width='200' heigth='200' src={ profilePic } roundedCircle />
                     {error && <Alert variant='danger'>{error}</Alert>}
-                    <strong>Email:</strong>{currentUser.email}
+                    <h6 className='text-center mb-4'>{currentUser.email}</h6>
                     <Link to='/update-profile' className='btn btn-primary w-100 mt-3'>Update Profile</Link>
                 </Card.Body>
             </Card>

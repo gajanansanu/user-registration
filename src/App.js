@@ -22,8 +22,9 @@ function App() {
               <Route path='/signup' component={SignUp} />
               <Route path='/signin' component={SignIn} />
               <Route path='/forgot-password' component={ForgotPassword}/>
-              </Switch>
+            </Switch>
           </AuthProvider>
+
          </Router> 
         </div>  
       </Container> 

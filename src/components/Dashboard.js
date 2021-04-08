@@ -30,6 +30,7 @@ const Dashboard = () => {
         <>
             <Card>
                 <Card.Body>
+                    
                     <h2 className='text-center mb-4'>Profile</h2>
                     <Image onClick={updateProfilePic} className="d-block mx-auto img-fluid w-50" width='200' heigth='200' src={ profilePic } roundedCircle />
                     {error && <Alert variant='danger'>{error}</Alert>}

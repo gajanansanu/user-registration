@@ -29,6 +29,7 @@ const SignIn = () => {
         <>
             <Card>
                 <Card.Body>
+                    <h1 className='text-center text-primary font-weight-light font-italic mb-4'>Cviiisys</h1>
                     <h2 className='text-center mb-4'>Sign In</h2>
                     
                     {error && <Alert variant='danger'>{error}</Alert>}
